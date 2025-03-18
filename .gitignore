@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+**/migrations/**
+!**/migrations/__init__.py
+**/__pycache__/**
+**/__pycache__/
+web/mediafiles/
+**/mediafiles/**
+web/staticfiles/
+**/staticfiles/**
