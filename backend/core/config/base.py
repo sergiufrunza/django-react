@@ -26,9 +26,6 @@ SUPER_USER_NAME = "admin"
 SUPER_USER_PASS = "admin"
 AUTH_USER_MODEL = 'user.User'
 
-SOCIAL_AUTH_GOOGLE_CLIENT_ID = config('SOCIAL_AUTH_GOOGLE_CLIENT_ID')
-SOCIAL_AUTH_GOOGLE_SECRET = config('SOCIAL_AUTH_GOOGLE_SECRET')
-
 INSTALLED_APPS = [
     # New Admin Panel
     'django.contrib.admin',
