@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    @apply m-0 p-0 box-border font-sans;
+}
+html,
+body,
+#root{
+    @apply h-svh w-full overflow-x-hidden;
+}
+#root{
+    @apply flex flex-col;
+}
