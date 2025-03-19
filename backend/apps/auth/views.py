@@ -17,7 +17,7 @@ class RegisterAPIView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        password = request.data.get("password")
+        password = request.data.get("password", "")
         try:
             validate_password(password)
         except ValidationError as e:

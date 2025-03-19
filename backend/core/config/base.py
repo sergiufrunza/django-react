@@ -12,10 +12,10 @@ CSRF_COOKIE_NAME = "XSRF-TOKEN"
 APPEND_SLASH = False
 
 ALLOWED_HOSTS = ["*"]
-PROTOCOL = "http"
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://accounts.google.com",
+    "http://127.0.0.1:8000",
+    "http://localhost:8000"
 ]
 
 INTERNAL_IPS = [
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "apps.auth",
     "apps.user",
+    "apps.blog"
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,9 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    ),
 }
 
 SIMPLE_JWT = {
@@ -80,7 +83,7 @@ SIMPLE_JWT = {
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
